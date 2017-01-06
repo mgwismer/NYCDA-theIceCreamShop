@@ -5,6 +5,8 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
+    @your_order = @user.orders.last
   end
 
   def new
@@ -13,18 +15,16 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @user = User.find(1)
+    @user = User.find(session[:user_id])
     @products = Product.all
     @order = Order.create(user_id: @user.id, numitems: 0, total: 0)
     (1..@products.length).each do |i|
-     puts "testing:) #{i}"
      if (params["#{i}"]["id"] == "1")
-
        @product = Product.find(i)
        @order.products.push(@product)
      end
     end
-    redirect_to @order
+    redirect_to "/orders/#{@user.id}"
   end
 
   def edit
