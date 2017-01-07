@@ -1,3 +1,24 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-h1 {
+	color: red;
+	position: relative;
+	top: 50px;
+	text-align: center;
+}
+
+.cow-img {
+	background-image: url("cow-cutout.jpg");
+	background-position: center center;
+	background-size: contain;
+	height: 300px;
+	width: 400px;
+}
+
+.dairy-text {
+	text-align: center;
+	font-size: 2em;
+	position: relative;
+	top: 30px;
+}

@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+$logo-font: cursive;
+$main-color: rgba(220, 20, 60, .5);
+$font-color-header-footer: white;
+$user-font: "Trebuchet MS";
+
+body {
+	height: 100%;
+	font-family: $logo-font;
+}
+
+.nav-div {
+	background-color: $main-color;
+	width: 100%;
+	position: fixed;
+	box-sizing: border-box;
+	z-index: 100;
+	font-family: $logo-font;
+}
+.nav-div ul {
+	list-style-type: none;
+	margin-bottom: 0px;
+	text-decoration: none;
+	color: $font-color-header-footer;
+}
+.nav-div li:first-child {
+	margin-left: 20px;
+	font-family: $logo-font;
+	font-size: 2.5em;
+	display: inline-block;
+	opacity: .7;
+}
+.nav-div li {
+	display: inline-block;
+	margin-left: 40px;
+	cursor: pointer;
+}
+
+.nav-div li a {
+	color: white;
+	text-decoration: none;
+	background-color: inherit;
+	opacity: .7;
+}
