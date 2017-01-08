@@ -34,6 +34,9 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    Order.find(params[:id]).destroy
+    flash[:success] = "order deleted"
+    redirect_to "/users/#{session[:user_id]}"
   end
 
   def add_to_order

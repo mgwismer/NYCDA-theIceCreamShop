@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    @orders = @user.orders
   end
 
   def new
@@ -28,6 +29,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "user deleted"
+    redirect_to "/users"
   end
 
   private

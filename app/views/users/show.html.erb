@@ -27,6 +27,22 @@
     </div>
     <div class="col-md-3">
     	<h4> Your orders </h4>
+    	<table>
+    	  <tr>
+    	  	<th></th> 
+    	  	<th></th> 
+    	  	<th></th>
+        </th>
+	    	<% @orders.each do |order| %>
+	    	  <tr>
+			    	<td> <%= order.id %></td>
+			      <td><button><%= link_to 'Show', order %>  </button></td>
+			      <td><button><%= link_to "Delete", order, method: :delete,
+			            data: { confirm: "You sure?" } %></button> 
+			      </td>
+		      </tr>
+	      <% end %>
+	    </table>
     </div>
     <div class="col-md-3">
     	<h4> Your wishlist </h4>
