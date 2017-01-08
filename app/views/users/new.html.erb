@@ -1,22 +1,26 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-
-<h2> Create new user</h2>
-
-<%= form_for User.new do |f| %>
-
-   <%= f.label :username, value: "Username" %>
-   <%= f.text_field :username, placeholder: "username" %>
-
-   <%= f.label :address %>
-   <%= f.text_field :address %>
-
-   <%= f.label :email %>
-   <%= f.email_field :email %>
-
-
-   <%= f.label :password %>
-   <%= f.password_field :password %>
-   <%= f.submit %>
-
-<% end %>
+<div class="container-fluid signup-div">
+    <div class="row">
+        <div class="col-md-3"></div>
+		<h2 class="sign-up-h2 col-md-6"> Sign up for a distinctive taste experience</h2>
+	</div>
+	<div class="row">
+	    <div class="col-md-3"></div>
+		<div class="col-md-4 signup-blk">
+		<%= form_for User.new do |f| %>
+		   <%= f.label :username, value: "Username" %>
+		   <%= f.text_field :username, placeholder: "username" %>
+           <br>
+		   <%= f.label :address %>
+		   <%= f.text_field :address %>
+		   <br>
+		   <%= f.label :email %>
+		   <%= f.email_field :email %>
+		   <br>
+		   <%= f.label :password %>
+		   <%= f.password_field :password %>
+		   <br>
+		   <%= f.submit %>
+		<% end %>
+		</div>
+	</div>
+</div>

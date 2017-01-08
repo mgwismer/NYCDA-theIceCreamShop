@@ -1,3 +1,29 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.signup-div {
+	position: relative;
+	top: 150px;
+}
+
+.sign-up-h2 {
+	text-align: center;
+}
+
+.user-div {
+	position: relative;
+	top: 150px;
+}
+
+.account-table {
+
+	th, td {
+		width: 50%;
+		padding: 5px;
+	}
+}
+
+.update-btn {
+	width: 50%;
+	text-align: center;
+}
