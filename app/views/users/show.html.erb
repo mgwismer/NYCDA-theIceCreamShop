@@ -21,8 +21,8 @@
 	      	<td> <%= @user.email %> </td>
 	      </tr>
       </table>
-      <div class="update-btn">
-      <button class="update"> UPDATE</button>
+      <div class="update-btn"><a href="/users/<%= session[:user_id] %>/edit">
+      <button class="update"> UPDATE</button> </a>
       </div>
     </div>
     <div class="col-md-3">
@@ -48,6 +48,13 @@
     </div>
     <div class="col-md-3">
     	<h4> Your wishlist </h4>
+    </div>
+  </div>
+  <div class="new-order-div-btn row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-3">
+      <a href="/orders/new"><button class="order-btn"> THIS WEEK's DELIGHTS</button></a>
     </div>
   </div>
 </div>

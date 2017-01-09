@@ -1,2 +1,31 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
+<div class="container-fluid signup-div">
+    <div class="row">
+        <div class="col-md-3"></div>
+		<h2 class="signup-up-h2 col-md-6"> Update your account information</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-3"></div>
+			<div class="col-md-4 signup-blk">
+				<%= form_for(@user) do |f| %>
+					<%= f.label :username, value: "Username" %>
+					<%= f.text_field :username, placeholder: "username" %>
+			 		<br>
+			  	<%= f.label :address %>
+					<%= f.text_field :address %>
+					<br>
+					<%= f.label :email %>
+					<%= f.email_field :email %>
+					<br>
+					<%= f.label :password %>
+					<%= f.password_field :password %>
+					<br>
+					<%= f.label :password_confirmation %>
+					<%= f.password_field :password_confirmation %>
+					<br>
+					<%= f.submit %>
+				<% end %>
+		</div>
+	</div>
+</div>

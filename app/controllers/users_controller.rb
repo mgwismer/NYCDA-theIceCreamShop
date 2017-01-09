@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
     @orders = @user.orders
   end
 
@@ -30,9 +29,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+    if @user.update(user_params)
+      flash[:notice] = "update successful"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   def destroy

@@ -1,15 +1,23 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
-<a href="/"> HOME </a>
-<h1>Products#index</h1>
 
-<%= form_for Order.new do |f| %>
-  <% @products.each do |prod| %>
-    <h3> Ice cream flavor</h3>
-    <%= prod.name %>
-    <h3> price (10 gallons) </h3>
-    <%= prod.price %>
-	  <%= check_box(prod.id, "id") %>
-   <% end %>
-   <%= f.submit %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-3"><h4>Flavor</h4></div>
+		<div class="col-md-3"><h4> Price (10 gallons)</h4></div>
+	</div>
+	<div class="row">
+	<%= form_for Order.new do |f| %>
+	  <% @products.each do |prod| %>
+	    <div class="col-md-2"></div>
+	    <div class="col-md-3">
+	    	<h5>  <%= prod.name %> </h5>
+	    </div>
+	    <div></div>
+	    <h3> price (10 gallons) </h3>
+	    <%= prod.price %>
+		  <%= check_box(prod.id, "id") %>
+	   <% end %>
+	   <%= f.submit %>
+	<% end %>
+  </div>
+</div>
