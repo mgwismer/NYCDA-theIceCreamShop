@@ -33,9 +33,11 @@
     	  	<th></th> 
     	  	<th></th>
         </th>
+        <% order_num = 0 %>
 	    	<% @orders.each do |order| %>
 	    	  <tr>
-			    	<td> <%= order.id %></td>
+            <% order_num += 1 %>
+			    	<td> <%= order_num %></td>
 			      <td><button><%= link_to 'Show', order %>  </button></td>
 			      <td><button><%= link_to "Delete", order, method: :delete,
 			            data: { confirm: "You sure?" } %></button> 
