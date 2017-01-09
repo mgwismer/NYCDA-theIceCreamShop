@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
     if @user && @user.password == params[:password]
     	session[:user_id] = @user.id
     	redirect_to "/users/#{@user.id}"
+    else 
+      redirect_to "/"
     end
   end
 

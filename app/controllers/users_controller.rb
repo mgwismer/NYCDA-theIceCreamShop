@@ -19,7 +19,14 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     Order.create(user_id: @user.id)
     Wishlist.create(user_id: @user.id)
-    redirect_to "/users/#{@user.id}"
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to @user
+      else
+        flash[:notice] = "Put correct email"
+        redirect_to new_user_path
+      end
+    # redirect_to "/users/#{@user.id}"
   end
 
   def edit

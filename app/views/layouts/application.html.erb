@@ -32,6 +32,11 @@
 	</div>
   </nav>
 </div>
+<div id="wrapper">
+  <% flash.each do |name,msg| -%>
+     <%= content_tag :div, msg, class: name %>
+  <% end -%>
+</div>
     <%= yield %>
   </body>
 </html>
