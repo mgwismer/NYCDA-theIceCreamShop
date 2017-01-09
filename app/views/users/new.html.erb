@@ -6,21 +6,7 @@
 	<div class="row">
 	    <div class="col-md-3"></div>
 		<div class="col-md-4 signup-blk">
-		<%= form_for User.new do |f| %>
-		   <%= f.label :username, value: "Username" %>
-		   <%= f.text_field :username, placeholder: "username" %>
-           <br>
-		   <%= f.label :address %>
-		   <%= f.text_field :address %>
-		   <br>
-		   <%= f.label :email %>
-		   <%= f.email_field :email %>
-		   <br>
-		   <%= f.label :password %>
-		   <%= f.password_field :password %>
-		   <br>
-		   <%= f.submit %>
-		<% end %>
+		<%= render 'form' %>
 		</div>
 	</div>
 </div>
