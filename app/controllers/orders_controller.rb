@@ -18,13 +18,16 @@ class OrdersController < ApplicationController
     @user = User.find(session[:user_id])
     @products = Product.all
     @order = Order.create(user_id: @user.id, numitems: 0, total: 0)
+    total = 0
     (1..@products.length).each do |i|
      if (params["#{i}"]["id"] == "1")
        @product = Product.find(i)
+       total += @product.price
        @order.products.push(@product)
      end
     end
-    redirect_to "/orders/#{@user.id}"
+    @order.update(total: total)
+    redirect_to "/users/#{@user.id}"
   end
 
   def edit

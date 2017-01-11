@@ -1,23 +1,31 @@
 
-<div class="container-fluid">
-  <div class="row">
+<div class="product-div container-fluid">
+  <div class="product-head-div row">
 		<div class="col-md-2"></div>
-		<div class="col-md-3"><h4>Flavor</h4></div>
-		<div class="col-md-3"><h4> Price (10 gallons)</h4></div>
+		<div class="col-md-3"><p> Flavor</p></div>
+		<div class="col-md-2"><p> Price (10 gallons)</p></div>
+		<div class="col-md-2">Add to order</div>
+        <div class="col-md-2">Add to wishlist</div>
 	</div>
-	<div class="row">
-	<%= form_for Order.new do |f| %>
-	  <% @products.each do |prod| %>
-	    <div class="col-md-2"></div>
-	    <div class="col-md-3">
-	    	<h5>  <%= prod.name %> </h5>
-	    </div>
-	    <div></div>
-	    <h3> price (10 gallons) </h3>
-	    <%= prod.price %>
-		  <%= check_box(prod.id, "id") %>
-	   <% end %>
-	   <%= f.submit %>
-	<% end %>
-  </div>
+
+    <% @products.each do |prod| %>
+			<div class="row">
+			  <div class="col-md-2"></div>
+			  <div class="col-md-3"><h5>  <%= prod.name %> </h5>
+			  </div>
+			  <div class="col-md-2">
+			    <h5> <%= prod.price %> </h5>  
+			  </div>
+			  <div class="col-md-2">
+				   <%= check_box(prod.id, "id") %>
+				</div>
+				<div class="col-md-2"> <%= check_box(prod.id, "id") %></div>
+			</div>
+		<% end %>
+		<%= form_for Order.new do |f| %>
+		   <%= f.submit %>
+		<% end %>
+		<%= form_for Wishlist.new do |f| %>
+		   <%= f.submit %>
+		<% end %>
 </div>

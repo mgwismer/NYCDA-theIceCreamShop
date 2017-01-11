@@ -1,11 +1,24 @@
 
-
-<div>
-  <h3> Your order </h3>
-    <% @your_order.products.each do |prod| %>
-    <h4> Ice cream flavor</h4>
-    <%= prod.name %>
-    <h4> price (10 gallons) </h4>
-    <%= prod.price %>
-   <% end %>
+<div class="order-div container">
+  <h3> Your order created at <%= @your_order.created_at %> </h3>
+	<div class="order-heading row">
+	  <div class="col-md-2"></div>
+	  <div class="col-md-3"> <h5> Ice cream flavor</h5></div>
+	  <div class="col-md-3"> <h5> price (10 gallons) </h5></div>
+	</div>
+	<% @your_order.products.each do |prod| %>
+	    <div class="indiv-order row">
+	      <div class="col-md-2"></div>
+	    	<div class="col-md-3">
+	    	<%= prod.name %>
+	    	</div>
+	    	<div class="col-md-3">
+	    	<%= prod.price %>
+	    	</div>
+	    </div>
+	<% end %>	
+	<div class="order-total-blk row"></div> 
+	<div class="col-md-2"> </div>
+	<div class="col-md-3"> <h5> Order Total</h5></div>  
+	<div class="col-md-3"><h5> <%= @your_order.total %></h5></div>
 </div>
