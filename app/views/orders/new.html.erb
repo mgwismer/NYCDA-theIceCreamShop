@@ -8,21 +8,22 @@
         <div class="col-md-2">Add to wishlist</div>
 	</div>
 
+	<%= form_for Order.new do |f| %>
     <% @products.each do |prod| %>
 			<div class="row">
-			  <div class="col-md-2"></div>
-			  <div class="col-md-3"><h5>  <%= prod.name %> </h5>
-			  </div>
+				<div class="col-md-2"></div>
+				<div class="col-md-3"><h5>  
+					<%= prod.name %> </h5>
+				</div>
 			  <div class="col-md-2">
 			    <h5> <%= prod.price %> </h5>  
-			  </div>
-			  <div class="col-md-2">
-				   <%= check_box(prod.id, "id") %>
 				</div>
-				<div class="col-md-2"> <%= check_box(prod.id, "id") %></div>
+				<div class="col-md-2">
+					<%= check_box(prod.id, "id") %>
+				</div>
 			</div>
 		<% end %>
-		<%= form_for Order.new do |f| %>
-		   <%= f.submit %>
-		<% end %>
+		<%= f.submit %>
+	<% end %>
+	<%= button_to "CREATE WISHLIST", new_wishlist_path, :method => "get" %>
 </div>

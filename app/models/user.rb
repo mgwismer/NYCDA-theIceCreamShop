@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	has_many :orders
-
+    has_many :wishlists
 	validates :email, presence: true
 	validates :email, uniqueness: true
 	validates :password_confirmation, presence: true

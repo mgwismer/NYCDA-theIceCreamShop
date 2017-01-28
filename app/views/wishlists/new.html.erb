@@ -1,2 +1,26 @@
-<h1>Wishlists#new</h1>
-<p>Find me in app/views/wishlists/new.html.erb</p>
+<div class="product-div container-fluid">
+  <div class="product-head-div row">
+		<div class="col-md-2"></div>
+		<div class="col-md-3"><p> Flavor</p></div>
+		<div class="col-md-2"><p> Price (10 gallons)</p></div>
+		<div class="col-md-2">Add to wishlist</div>
+	</div>
+
+	<%= form_for Wishlist.new do |f| %>
+    <% @products.each do |prod| %>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-3"><h5>  
+					<%= prod.name %> </h5>
+				</div>
+			  <div class="col-md-2">
+			    <h5> <%= prod.price %> </h5>  
+				</div>
+				<div class="col-md-2">
+					<%= check_box(prod.id, "id") %>
+				</div>
+			</div>
+		<% end %>
+		<%= f.submit %>
+	<% end %>
+</div>

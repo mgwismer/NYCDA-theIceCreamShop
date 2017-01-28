@@ -47,7 +47,25 @@
 	    </table>
     </div>
     <div class="col-md-3">
-    	<h4> Your wishlist </h4>
+    	<h4> Your wishlists </h4>
+      <table>
+        <tr>
+          <th></th> 
+          <th></th> 
+          <th></th>
+        </th>
+        <% wishlist_num = 0 %>
+        <% @wishlists.each do |wishlist| %>
+          <tr>
+            <% wishlist_num += 1 %>
+            <td> <%= wishlist_num %></td>
+            <td><button><%= link_to 'Show', wishlist %>  </button></td>
+            <td><button><%= link_to "Delete", wishlist, method: :delete,
+                  data: { confirm: "You sure?" } %></button> 
+            </td>
+          </tr>
+        <% end %>
+      </table>
     </div>
   </div>
   <div class="new-order-div-btn row">
